@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assigment 4</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+
+    <div class="container mx-auto px-4">
+        <h1 class="text-4xl font-bold text-center text-indigo-700 mb-10">Function Tester</h1>
+
+        <!-- 1. Total Fine Calculator -->
+
+        <div class="function-box bg-white rounded-xl shadow-md p-6 mb-8">
+
+            <h2 class="text-2xl font-semibold text-indigo-600 mb-4">1. Total Fine Calculator</h2>
+
+            <div class="flex flex-col md:flex-row gap-4 mb-4">
+
+                <div class="flex-1">
+                    <input type="number" id="fareInput" class="w-full px-4 py-2 border rounded-lg"
+                        placeholder="Enter fare amount">
+
+                </div>
+
+
+                <button onclick="calculateFine()"
+                    class="btn-calculate text-white px-6 py-2 rounded-lg">Calculate</button>
+
+            </div>
+
+            <div class="result-box bg-gray-50 p-4 rounded-lg border border-gray-200 mb-4">
+                <p>Result:
+                    <span id="fineResult" class="font-medium">-</span>
+                </p>
+            </div>
+
+            <div id="fineActions" class="action-buttons hidden gap-2">
+
+
+
+
+                <button onclick="resetFine()" class="btn-reset text-white px-4 py-2 rounded-lg">Reset</button>
+            </div>
+        </div>
+
+        <!-- 2. String Processor -->
+        <div class="function-box bg-white rounded-xl shadow-md p-6 mb-8">
+
+            <h2 class="text-2xl font-semibold text-indigo-600 mb-4">2. String Processor</h2>
+
+            <div class="flex flex-col md:flex-row gap-4 mb-4">
+                <div class="flex-1">
+                    <input type="text" id="stringInput" class="w-full px-4 py-2 border rounded-lg"
+                        placeholder="Enter string">
+                </div>
+
+
+
+                <button onclick="processString()" class="btn-calculate text-white px-6 py-2 rounded-lg">Process</button>
+            </div>
+
+            <div class="result-box bg-gray-50 p-4 rounded-lg border border-gray-200 mb-4">
+                <p>Result: <span id="stringResult" class="font-medium">-</span></p>
+            </div>
+
+
+            <div id="stringActions" class="action-buttons hidden gap-2">
+
+
+
+
+                <button onclick="resetString()" class="btn-reset text-white px-4 py-2 rounded-lg">Reset</button>
+            </div>
+        </div>
+
+        <!-- 3. Team Comparator -->
+        <div class="function-box bg-white rounded-xl shadow-md p-6 mb-8">
+
+
+
+            <h2 class="text-2xl font-semibold text-indigo-600 mb-4">3. Team Comparator</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <h3 class="text-lg font-medium text-gray-700 mb-3">Team 1</h3>
+                    <div class="space-y-3">
+                        <div>
+
+                            <label class="block text-gray-600 mb-1">Name:</label>
+
+                            <input type="text" id="team1Name" class="w-full px-3 py-2 border rounded-lg" value="Team A">
+                        </div>
+
+                        <div>
+
+                            <label class="block text-gray-600 mb-1">Fouls:</label>
+
+                            <input type="number" id="team1Foul" class="w-full px-3 py-2 border rounded-lg" value="">
+                        </div>
+
+                        <div>
+
+                            <label class="block text-gray-600 mb-1">Yellow Cards:</label>
+                            <input type="number" id="team1Yellow" class="w-full px-3 py-2 border rounded-lg" value="">
+                        </div>
+                        <div>
+                            <label class="block text-gray-600 mb-1">Red Cards:</label>
+
+                            <input type="number" id="team1Red" class="w-full px-3 py-2 border rounded-lg" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <h3 class="text-lg font-medium text-gray-700 mb-3">Team 2</h3>
+                    <div class="space-y-3">
+                        <div>
+
+                            <label class="block text-gray-600 mb-1">Name:</label>
+
+                            <input type="text" id="team2Name" class="w-full px-3 py-2 border rounded-lg" value="Team B">
+                        </div>
+                        <div>
+
+                            <label class="block text-gray-600 mb-1">Fouls:</label>
+
+                            <input type="number" id="team2Foul" class="w-full px-3 py-2 border rounded-lg" value="">
+                        </div>
+
+                        <div>
+
+                            <label class="block text-gray-600 mb-1">Yellow Cards:</label>
+
+                            <input type="number" id="team2Yellow" class="w-full px-3 py-2 border rounded-lg" value="">
+                        </div>
+                        <div>
+
+                            <label class="block text-gray-600 mb-1">Red Cards:</label>
+                            <input type="number" id="team2Red" class="w-full px-3 py-2 border rounded-lg" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button onclick="compareTeams()" class="btn-calculate text-white px-6 py-2 rounded-lg mb-4">Compare
+                Teams</button>
+            <div class="result-box bg-gray-50 p-4 rounded-lg border border-gray-200 mb-4">
+
+                <p>Result: <span id="teamResult" class="font-medium">-</span></p>
+            </div>
+            <div id="teamActions" class="action-buttons hidden gap-2">
+
+                <button onclick="resetTeams()" class="btn-reset text-white px-4 py-2 rounded-lg">Reset</button>
+            </div>
+        </div>
+
+
+
+
+
+
+        <!-- 4. Array Comparator -->
+
+
+
+        <div class="function-box bg-white rounded-xl shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-indigo-600 mb-4">4. Array Comparator</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                <input type="text" id="array1Input" class="w-full px-4 py-2 border rounded-lg"
+                    placeholder="Array 1 (comma separated)">
+
+                <input type="text" id="array2Input" class="w-full px-4 py-2 border rounded-lg"
+                    placeholder="Array 2 (comma separated)">
+
+            </div>
+            <button onclick="compareArrays()" class="btn-calculate text-white px-6 py-2 rounded-lg mb-4">Compare
+                Arrays</button>
+
+            <div class="result-box bg-gray-50 p-4 rounded-lg border border-gray-200 mb-4">
+                <p>Result:
+                    <span id="arrayResult" class="font-medium">-</span>
+                </p>
+            </div>
+            <div id="arrayActions" class="action-buttons hidden gap-2">
+
+
+
+                <button onclick="resetArrays()" class="btn-reset text-white px-4 py-2 rounded-lg">Reset</button>
+
+
+            </div>
+        </div>
+
+
+
+
+        <!-- 5. Marks Analyzer -->
+
+
+        <div class="function-box bg-white rounded-xl shadow-md p-6 mb-8">
+
+            <h2 class="text-2xl font-semibold text-indigo-600 mb-4">5. Marks Analyzer</h2>
+
+            <div class="flex flex-col md:flex-row gap-4 mb-4">
+
+                <input type="text" id="marksInput" class="w-full px-4 py-2 border rounded-lg"
+                    placeholder="Marks (comma separated)">
+
+                <button onclick="analyzeMarks()" class="btn-calculate text-white px-6 py-2 rounded-lg">Analyze</button>
+
+            </div>
+            <div class="result-box bg-gray-50 p-4 rounded-lg border border-gray-200 mb-4">
+                <p>Result: <span id="marksResult" class="font-medium">-</span></p>
+                <div id="marksDetails" class="hidden mt-2">
+
+
+
+
+                    <p class="text-gray-600">Average Score: <span id="avgScore" class="font-medium"></span></p>
+
+                    <p class="text-gray-600">Passed: <span id="passedCount" class="font-medium text-green-600"></span>
+                    </p>
+
+                    <p class="text-gray-600">Failed: <span id="failedCount" class="font-medium text-red-600"></span></p>
+
+                </div>
+            </div>
+            <div id="marksActions" class="action-buttons hidden gap-2">
+
+
+                <button onclick="resetMarks()" class="btn-reset text-white px-4 py-2 rounded-lg">Reset</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
